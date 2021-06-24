@@ -10,8 +10,8 @@ Elsha Yuandini Dewasasmita - 672019321
 #else
 #include <GL/glut.h>
 #endif
-#include <stdlib.h>
 #include<math.h>
+#include <stdlib.h>
 
 void init(void);
 void tampil(void);
