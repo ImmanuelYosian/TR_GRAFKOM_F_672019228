@@ -4,8 +4,6 @@ Yulius - 672019014
 David Aryo Wicaksono - 672019307
 Elsha Yuandini Dewasasmita - 672019321
 */
-
-
 #include <windows.h>
 #ifdef APPLE
 #include <GLUT/glut.h>
