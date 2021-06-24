@@ -1,3 +1,11 @@
+/*Nama Anggota Kelompok :
+Immanuel Yosian Leo Pratama - 672019228
+Yulius - 672019014
+David Aryo Wicaksono - 672019307
+Elsha Yuandini Dewasasmita - 672019321
+*/
+
+
 #include <windows.h>
 #ifdef APPLE
 #include <GLUT/glut.h>
