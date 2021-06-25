@@ -1,6 +1,5 @@
 /*
 Nama Kelompok : Cuan
-
 Nama Anggota Kelompok :
 Immanuel Yosian Leo Pratama - 672019228
 Yulius - 672019014
