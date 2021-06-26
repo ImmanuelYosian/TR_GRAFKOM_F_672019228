@@ -252,12 +252,18 @@ void tampil(void){
     glTranslatef(xtrans,ytrans,ztrans);
     glPushMatrix();
     //Tangga Gedung Kiri Depan
-    tangga(0,0,0,10,15,1,180,190,10,48);
-    tangga(0,0,0,8,15,1,180,190,-25,48);
+    tangga(0,0,0,10,15,1,180,190,10,47);
+    tangga(0,0,0,8,15,1,180,190,-25,44);
 	
 	//Tangga Gedung Kanan depan
 	tangga(0,0,0,10,15,1,180,-225,10,48);
 	tangga(0,0,0,8,15,1,180,-225,-25,48);
+	
+	//Tangga Gedung Belakang Kiri
+	tangga(0,0,0,8,15,1,0,-225,-25,-426);
+	
+	//Tangga Gedung Belakang Kanan
+	tangga(0,0,0,8,15,1,0,190,-25,-316);
 	
     glColor3f(0,1,1);
 	glBegin(GL_LINES);
@@ -367,13 +373,13 @@ void tampil(void){
 		glVertex3f(180,10,-100);
 		glVertex3f(75,10,-100);
 	glEnd();
-	glBegin(GL_QUADS);
-	glColor3f(0.35, 0.16, 0.14);
-		glVertex3f(75,100,-20);
-		glVertex3f(75,100,-100);
-		glVertex3f(75,10,-100);
-		glVertex3f(75,10,-20);
-	glEnd();
+//	glBegin(GL_QUADS);
+//	glColor3f(0.35, 0.16, 0.14);
+//		glVertex3f(75,100,-20);
+//		glVertex3f(75,100,-100);
+//		glVertex3f(75,10,-100);
+//		glVertex3f(75,10,-20);
+//	glEnd();
 	//samping kanan
 	glColor3f(0.90,0.91,0.98);
 	glBegin(GL_QUADS);
@@ -624,13 +630,13 @@ void tampil(void){
 		glVertex3f(-180,10,-100);
 		glVertex3f(-180,10,-400);
 	glEnd();
-//	//kiri samping atas
-//	glBegin(GL_QUADS);
-//		glVertex3f(-180,100,-100);
-//		glVertex3f(-180,100,-20);
-//		glVertex3f(-180,10,-20);
-//		glVertex3f(-180,10,-100);
-//	glEnd();
+	//kiri samping atas
+	glBegin(GL_QUADS);
+		glVertex3f(-180,100,-100);
+		glVertex3f(-180,100,-20);
+		glVertex3f(-180,10,-20);
+		glVertex3f(-180,10,-100);
+	glEnd();
 	//atap
 	glColor3f(0.258824,0.258824,0.435294);
 	glBegin(GL_POLYGON);
