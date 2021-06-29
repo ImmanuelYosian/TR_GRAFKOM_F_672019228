@@ -1,12 +1,3 @@
-/*
-Nama Kelompok : Cuan
-Nama Anggota Kelompok :
-Immanuel Yosian Leo Pratama - 672019228
-Yulius - 672019014
-David Aryo Wicaksono - 672019307
-Elsha Yuandini Dewasasmita - 672019321
-*/
-
 #include <windows.h>
 #ifdef APPLE
 #include <GLUT/glut.h>
@@ -252,18 +243,18 @@ void tampil(void){
     glTranslatef(xtrans,ytrans,ztrans);
     glPushMatrix();
     //Tangga Gedung Kiri Depan
-    tangga(0,0,0,10,15,1,180,190,10,47);
-    tangga(0,0,0,8,15,1,180,190,-25,44);
+    tangga(0,0,0,10,15,1,180,196,10,47);
+    tangga(0,0,0,8,15,1,180,196,-25,44);
 	
 	//Tangga Gedung Kanan depan
-	tangga(0,0,0,10,15,1,180,-225,10,48);
-	tangga(0,0,0,8,15,1,180,-225,-25,48);
+	tangga(0,0,0,10,15,1,180,-229,10,48);
+	tangga(0,0,0,8,15,1,180,-229,-25,48);
 	
 	//Tangga Gedung Belakang Kiri
-	tangga(0,0,0,8,15,1,0,-225,-25,-426);
+	tangga(0,0,0,8,15,1,0,-229,-25,-426);
 	
 	//Tangga Gedung Belakang Kanan
-	tangga(0,0,0,8,15,1,0,190,-25,-316);
+	tangga(0,0,0,8,15,1,0,196,-25,-316);
 	
     glColor3f(0,1,1);
 	glBegin(GL_LINES);
@@ -349,6 +340,83 @@ void tampil(void){
 		glVertex3f(230,-25,-20);
 		glVertex3f(10,-25,-20);
 	glEnd();
+	
+	//lantai 2
+	glBegin(GL_QUADS);
+		glVertex3f(75,54,-20);
+		glVertex3f(195,54,-20);
+		glVertex3f(195,54,-100);
+		glVertex3f(75,54,-100);
+		
+		glVertex3f(230,54,-48);
+		glVertex3f(195,54,-48);
+		glVertex3f(195,54,-100);
+		glVertex3f(230,54,-100);
+		
+		glVertex3f(-75,54,-20);
+		glVertex3f(-195,54,-20);
+		glVertex3f(-195,54,-100);
+		glVertex3f(-75,54,-100);
+		
+		glVertex3f(-230,54,-48);
+		glVertex3f(-195,54,-48);
+		glVertex3f(-195,54,-100);
+		glVertex3f(-230,54,-100);
+	glEnd();
+	
+	//lantai 2
+	glBegin(GL_QUADS);
+		glVertex3f(10,10,-20);
+		glVertex3f(195,10,-20);
+		glVertex3f(195,10,-100);
+		glVertex3f(10,10,-100);
+		
+		glVertex3f(230,10,-48);
+		glVertex3f(195,10,-48);
+		glVertex3f(195,10,-100);
+		glVertex3f(230,10,-100);
+		
+		glVertex3f(180,10,-315);
+		glVertex3f(230,10,-315);
+		glVertex3f(230,10,-100);
+		glVertex3f(180,10,-100);
+		
+		glVertex3f(195,10,-315);
+		glVertex3f(180,10,-315);
+		glVertex3f(180,10,-340);
+		glVertex3f(195,10,-340);
+		
+		glVertex3f(75,10,-280);
+		glVertex3f(180,10,-280);
+		glVertex3f(180,10,-340);
+		glVertex3f(75,10,-340);
+		
+		glVertex3f(-10,10,-20);
+		glVertex3f(-195,10,-20);
+		glVertex3f(-195,10,-100);
+		glVertex3f(-10,10,-100);
+		
+		glVertex3f(-230,10,-48);
+		glVertex3f(-195,10,-48);
+		glVertex3f(-195,10,-100);
+		glVertex3f(-230,10,-100);
+		
+		glVertex3f(-180,10,-424);
+		glVertex3f(-230,10,-424);
+		glVertex3f(-230,10,-100);
+		glVertex3f(-180,10,-100);
+		
+		glVertex3f(-195,10,-424);
+		glVertex3f(-180,10,-424);
+		glVertex3f(-180,10,-450);
+		glVertex3f(-195,10,-450);
+		
+		glVertex3f(-195,10,-400);
+		glVertex3f(10,10,-400);
+		glVertex3f(10,10,-450);
+		glVertex3f(-195,10,-450);
+		
+	glEnd();
 	//bagian atas
 	glColor3f(0.35, 0.16, 0.14);
 	glBegin(GL_QUADS);
@@ -373,13 +441,13 @@ void tampil(void){
 		glVertex3f(180,10,-100);
 		glVertex3f(75,10,-100);
 	glEnd();
-//	glBegin(GL_QUADS);
-//	glColor3f(0.35, 0.16, 0.14);
-//		glVertex3f(75,100,-20);
-//		glVertex3f(75,100,-100);
-//		glVertex3f(75,10,-100);
-//		glVertex3f(75,10,-20);
-//	glEnd();
+	glBegin(GL_QUADS);
+	glColor3f(0.35, 0.16, 0.14);
+		glVertex3f(75,100,-20);
+		glVertex3f(75,100,-100);
+		glVertex3f(75,10,-100);
+		glVertex3f(75,10,-20);
+	glEnd();
 	//samping kanan
 	glColor3f(0.90,0.91,0.98);
 	glBegin(GL_QUADS);
@@ -630,13 +698,13 @@ void tampil(void){
 		glVertex3f(-180,10,-100);
 		glVertex3f(-180,10,-400);
 	glEnd();
-	//kiri samping atas
-	glBegin(GL_QUADS);
-		glVertex3f(-180,100,-100);
-		glVertex3f(-180,100,-20);
-		glVertex3f(-180,10,-20);
-		glVertex3f(-180,10,-100);
-	glEnd();
+//	//kiri samping atas
+//	glBegin(GL_QUADS);
+//		glVertex3f(-180,100,-100);
+//		glVertex3f(-180,100,-20);
+//		glVertex3f(-180,10,-20);
+//		glVertex3f(-180,10,-100);
+//	glEnd();
 	//atap
 	glColor3f(0.258824,0.258824,0.435294);
 	glBegin(GL_POLYGON);
