@@ -1167,6 +1167,14 @@ void tampil(void){
 		glVertex3f(-85,10,-100);
 		glVertex3f(-85,10,-270);
 	glEnd();
+		//bawah
+		glColor3f(0.0,0.180,0.0);
+	glBegin(GL_QUADS);
+		glVertex3f(-230,-25,-450);
+		glVertex3f(-230,-25,100);
+		glVertex3f(230,-25,100);
+		glVertex3f(230,-25,-450);
+	glEnd();
     glutSwapBuffers();
 }
 
