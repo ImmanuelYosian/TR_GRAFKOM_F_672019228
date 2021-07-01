@@ -1404,10 +1404,17 @@ void tampil(void){
 	glEnd();
 		glColor3f(0.5,0.0,0.0);
 	glBegin(GL_QUADS);
-		glVertex3f(-130,10,-230);
-		glVertex3f(-130,10,-200);
+		glVertex3f(-125,10,-230);
+		glVertex3f(-125,10,-200);
 		glVertex3f(-85,10,-200);
 		glVertex3f(-85,10,-230);
+	glEnd();
+	glColor3f(0.90,0.91,0.98);
+	glBegin(GL_QUADS);
+		glVertex3f(-140,15,-160);
+		glVertex3f(-140,15,-100);
+		glVertex3f(-140,10,-100);
+		glVertex3f(-140,10,-160);
 	glEnd();
 	//kotak L1 atas gedungputih
 	glColor3f(0.90,0.91,0.98);
@@ -1494,6 +1501,35 @@ void tampil(void){
 		glVertex3f(-170,15,-150);
 		glVertex3f(-170,10,-150);
 		glVertex3f(-170,10,-160);
+	glEnd();
+	//rumput
+	glColor3f(0.0,0.3,0.0);
+	glBegin(GL_QUADS);
+		glVertex3f(-165,12,-230);
+		glVertex3f(-165,12,-220);
+		glVertex3f(-125,12,-220);
+		glVertex3f(-125,12,-230);
+	glEnd();
+	glColor3f(0.0,0.3,0.0);
+	glBegin(GL_QUADS);
+		glVertex3f(-170,12,-150);
+		glVertex3f(-170,12,-160);
+		glVertex3f(-120,12,-160);
+		glVertex3f(-120,12,-150);
+	glEnd();
+		glColor3f(0.0,0.3,0.0);
+	glBegin(GL_QUADS);
+		glVertex3f(-130,12,-200);
+		glVertex3f(-130,12,-160);
+		glVertex3f(-120,12,-160);
+		glVertex3f(-120,12,-200);
+	glEnd();
+		glColor3f(0.0,0.3,0.0);
+	glBegin(GL_QUADS);
+		glVertex3f(-135,12,-200);
+		glVertex3f(-135,12,-220);
+		glVertex3f(-125,12,-220);
+		glVertex3f(-125,12,-200);
 	glEnd();
 	//ALAS 
 //	glColor3f(0.0,0.180,0.0);
