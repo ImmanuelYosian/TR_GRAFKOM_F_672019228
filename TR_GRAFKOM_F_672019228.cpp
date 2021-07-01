@@ -664,6 +664,18 @@ void tampil(void){
 		glVertex3f(-230,10,-450);
 		glVertex3f(10,10,-450);
 	glEnd();
+	glBegin(GL_QUADS);
+		glVertex3f(-180,70,-450);
+		glVertex3f(-230,70,-450);
+		glVertex3f(-230,10,-450);
+		glVertex3f(-180,10,-450);
+	glEnd();
+	glBegin(GL_QUADS);
+		glVertex3f(-180,70,-450);
+		glVertex3f(-230,70,-300);
+		glVertex3f(-230,50,-300);
+		glVertex3f(-180,50,-450);
+	glEnd();
 	//kiri samping
 	glColor3f(0.90,0.91,0.98);
 	glBegin(GL_QUADS);
