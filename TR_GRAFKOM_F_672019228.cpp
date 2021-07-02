@@ -129,6 +129,43 @@ float tangga (float x_awal, float y_awal, float z_awal,float anak_tangga,float l
 			
 }
 
+void lemari(){
+	glBegin(GL_QUADS);
+	glColor3f(0.2,0,0);
+	glVertex3f(0,-25,60);
+	glVertex3f(40,-25,60);
+	glVertex3f(40,-10,60);
+	glVertex3f(0,-10,60);
+	
+	glVertex3f(0,-10,50);
+	glVertex3f(40,-10,50);
+	glVertex3f(40,-10,60);
+	glVertex3f(0,-10,60);
+	
+	glColor3f(0.1,0,0);
+	glVertex3f(0,-18,50);
+	glVertex3f(40,-18,50);
+	glVertex3f(40,-18,60);
+	glVertex3f(0,-18,60);
+	
+	glColor3f(0.2,0,0);
+	glVertex3f(0,-25,50);
+	glVertex3f(40,-25,50);
+	glVertex3f(40,-25,60);
+	glVertex3f(0,-25,60);	
+	
+	glVertex3f(0,-25,50);
+	glVertex3f(0,-10,50);
+	glVertex3f(0,-10,60);
+	glVertex3f(0,-25,60);
+	
+	glVertex3f(40,-25,50);
+	glVertex3f(40,-10,50);
+	glVertex3f(40,-10,60);
+	glVertex3f(40,-25,60);	
+	glEnd();
+}
+
 void meja(){
 	glColor3f(0.2,0,0);
 	glBegin(GL_QUADS);
@@ -2912,62 +2949,29 @@ void tampil(void)
 	glEnd();
 	
 	//lemari
-	glBegin(GL_QUADS);
-	glColor3f(0.2,0,0);
-	glVertex3f(0,-25,50);
-	glVertex3f(40,-25,50);
-	glVertex3f(40,-10,50);
-	glVertex3f(0,-10,50);
-	
-	glVertex3f(0,-10,50);
-	glVertex3f(40,-10,50);
-	glVertex3f(40,-10,60);
-	glVertex3f(0,-10,60);
-	
-	glColor3f(0.1,0,0);
-	glVertex3f(0,-18,50);
-	glVertex3f(40,-18,50);
-	glVertex3f(40,-18,60);
-	glVertex3f(0,-18,60);
-	
-	glColor3f(0.2,0,0);
-	glVertex3f(0,-25,50);
-	glVertex3f(40,-25,50);
-	glVertex3f(40,-25,60);
-	glVertex3f(0,-25,60);	
-	glEnd();
-	
+	glPushMatrix();
+	glTranslatef(-125.1,14,-160.1);
+	glScalef(1,1.5,1);
+	lemari();
+	glPopMatrix();
 	//meja
 	
-	glPushMatrix();
-	glTranslatef(-120,0,-185);
-	kursi();
-	glPopMatrix();
+	for(i=0;i<3;i++){
+		glPushMatrix();
+		glTranslatef(-120,0,-170-i*15);
+		kursi();
+		glPopMatrix();
+		
+		glPushMatrix();
+		glRotatef(180,0,1,0);
+		glTranslatef(138,0,100+i*15);
+		kursi();
+		glPopMatrix();
+	}
 	
 	glPushMatrix();
-	glTranslatef(-120,0,-197);
-	kursi();
-	glPopMatrix();
-	
-	glPushMatrix();
-	glRotatef(180,0,1,0);
-	glTranslatef(138,0,115);
-	kursi();
-	glPopMatrix();
-	
-	glPushMatrix();
-	glRotatef(180,0,1,0);
-	glTranslatef(138,0,127);
-	kursi();
-	glPopMatrix();
-	
-	glPushMatrix();
-	glTranslatef(-100,0,-25);
-	meja();
-	glPopMatrix();
-	
-	glPushMatrix();
-	glTranslatef(-100,0,45);
+	glTranslatef(-100,0,250);
+	glScalef(1,1,2);
 	glColor3f(0.2,0,0);
 	meja();
 	glPopMatrix();
