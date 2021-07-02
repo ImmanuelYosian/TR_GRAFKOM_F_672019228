@@ -26,6 +26,16 @@ float angle = 0;
 int gerak = 0;
 bool atas = true;
 int is_depth;
+
+void ab(float xkiri, float xkanan, float y, float zdepan, float zbelakang) {
+    glBegin(GL_QUADS);
+    glVertex3f(xkiri, y, zdepan);
+    glVertex3f(xkanan, y, zdepan);
+    glVertex3f(xkanan, y, zbelakang);
+    glVertex3f(xkiri, y, zbelakang);
+    glEnd();
+}
+
 float tangga (float x_awal, float y_awal, float z_awal,float anak_tangga,float lebar_tangga,int jenis,float rotAngle,float a,float b, float c){
 	int i;
 	switch(jenis){
@@ -608,6 +618,20 @@ void mading(){
 	glEnd();
 }
 
+void jalan() {
+    glColor3f(1.0, 1.0, 1.0);
+    ab(-200.0, 200.0, -27.0, 100, 50);
+
+    //garis
+    glColor3f(0.0, 1.0, 1.0);
+    ab(-180.0, -150.0, -26.9, 76.0, 73.0);
+    ab(-120.0, -90.0, -26.9, 76.0, 73.0);
+    ab(-60.0, -30.0, -26.9, 76.0, 73.0);
+    ab(0.0, 30.0, -26.9, 76.0, 73.0);
+    ab(60.0, 90.0, -26.9, 76.0, 73.0);
+    ab(120.0, 150.0, -26.9, 76.0, 73.0);
+    ab(180.0, 200.0, -26.9, 76.0, 73.0);
+}
 void tampil(void)
 {
     if (is_depth)
@@ -618,6 +642,7 @@ void tampil(void)
     glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
 	mobil();
+	jalan();
   //Tangga Gedung Kiri Depan
     tangga(0,0,0,10,15,1,180,196,10,47);
     tangga(0,0,0,8,15,1,180,196,-25,44);
