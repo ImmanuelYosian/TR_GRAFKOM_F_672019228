@@ -6,8 +6,10 @@
 #endif
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 void init(void);
 void tampil(void);
+void mobil(void);
 void keyboard(unsigned char, int, int);
 void ukuran(int, int);
 void mouseMotion(int x, int y);
@@ -18,6 +20,11 @@ float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
 bool mousedown = false;
+const double PI = 3.142857143;
+int i, radius, jumlah_titik, x_tengah, y_tengah,n;
+float angle = 0;
+int gerak = 0;
+bool atas = true;
 int is_depth;
 float tangga (float x_awal, float y_awal, float z_awal,float anak_tangga,float lebar_tangga,int jenis,float rotAngle,float a,float b, float c){
 	int i;
@@ -545,27 +552,6 @@ void kursi(){
 	glEnd();
 }
 
-int main(int argc, char** argv)
-{
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(800, 600);
-    glutInitWindowPosition(40, 40);
-    glutCreateWindow("Zhejiang University");
-    init();
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//    glDepthFunc(GL_LEQUAL);
-//    glShadeModel(GL_SMOOTH);
-//    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-    glutDisplayFunc(tampil);
-    glutKeyboardFunc(keyboard);
-    glutMouseFunc(mouse);
-    glutMotionFunc(mouseMotion);
-    glutReshapeFunc(ukuran);
-    glutMainLoop();
-    return 0;
-}
 void init(void)
 {
     glClearColor(0, 0, 0.0, 0.0);
@@ -631,7 +617,7 @@ void tampil(void)
     glPushMatrix();
     glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
-
+	mobil();
   //Tangga Gedung Kiri Depan
     tangga(0,0,0,10,15,1,180,196,10,47);
     tangga(0,0,0,8,15,1,180,196,-25,44);
@@ -3185,7 +3171,270 @@ void tampil(void)
     glPopMatrix();
     glutSwapBuffers();
 }
+void mobil() {
+    //perintah animasi
+    glPushMatrix();
+    glTranslatef(gerak, 0, 0);
 
+    //tengah
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(23.5, -25.0, 85.0);
+    glVertex3f(23.5, -15.5, 85.0);
+    glVertex3f(70.0, -15.5, 85.0);
+    glVertex3f(70.0, -25.0, 85.0);
+    glEnd();
+    //tengah atas
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(28.5, -15.5, 85.0);
+    glVertex3f(31.5, 0.5, 85.0);
+    glVertex3f(67.0, 0.5, 85.0);
+    glVertex3f(70.0, -15.5, 85.0);
+    glEnd();
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(70.0, -25.0, 85.0);
+    glVertex3f(70.0, -15.5, 85.0);
+    glVertex3f(81.0, -15.5, 85.0);
+    glVertex3f(81.0, -25.0, 85.0);
+    glEnd();
+
+    //tengah
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(23.5, -25.0, 65.0);
+    glVertex3f(23.5, -15.5, 65.0);
+    glVertex3f(70.0, -15.5, 65.0);
+    glVertex3f(70.0, -25.0, 65.0);
+    glEnd();
+    //tengah atas
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(28.5, -15.5, 65.0);
+    glVertex3f(31.5, 0.5, 65.0);
+    glVertex3f(67.0, 0.5, 65.0);
+    glVertex3f(70.0, -15.5, 65.0);
+    glEnd();
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(70.0, -25.0, 65.0);
+    glVertex3f(70.0, -15.5, 65.0);
+    glVertex3f(81.0, -15.5, 65.0);
+    glVertex3f(81.0, -25.0, 65.0);
+    glEnd();
+
+    //atas
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(31, 0.5, 65.0);
+    glVertex3f(67, 0.5, 65.0); //belakang
+    glVertex3f(67, 0.5, 85.0); //depan kanan
+    glVertex3f(31, 0.5, 85.0); //depan kiri
+    glEnd();
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(67.0, 0.0, 85.0);
+    glVertex3f(70.0, -15.0, 85.0);
+    glVertex3f(70.0, -15.0, 65.0);
+    glVertex3f(67.0, 0.0, 65.0);
+    glEnd();
+    //kaca-depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 0);
+    glVertex3f(67.1, 0.0, 83.0);
+    glVertex3f(70.1, -15.0, 83.0);
+    glVertex3f(70.1, -15.0, 68.0);
+    glVertex3f(67.1, 0.0, 68.0);
+    glEnd();
+    //belakang
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(31.0, 0.0, 85.0);
+    glVertex3f(28.0, -15.0, 85.0);
+    glVertex3f(28.0, -15.0, 65.0);
+    glVertex3f(31.0, 0.0, 65.0);
+    glEnd();
+    //tutup cap depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(67, -15.5, 85.0);
+    glVertex3f(80, -15.5, 85.0); //belakang
+    glVertex3f(80, -15.5, 65.0); //depan kanan
+    glVertex3f(67, -15.5, 65.0); //depan kiri
+    glEnd();
+    //tutup cap belakang
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(23, -15.5, 85.0);
+    glVertex3f(28, -15.5, 85.0); //belakang
+    glVertex3f(28, -15.5, 65.0); //depan kanan
+    glVertex3f(23, -15.5, 65.0); //depan kiri
+    glEnd();
+    //tempat lampu
+    //depan
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(81.0, -15.0, 85.0);
+    glVertex3f(81.0, -25.0, 85.0);
+    glVertex3f(81.0, -25.0, 65.0);
+    glVertex3f(81.0, -15.0, 65.0);
+    glEnd();
+    //belakang
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 1);
+    glVertex3f(23.0, -15.0, 85.0);
+    glVertex3f(23.0, -25.0, 85.0);
+    glVertex3f(23.0, -25.0, 65.0);
+    glVertex3f(23.0, -15.0, 65.0);
+    glEnd();
+    //jendela 1
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 0);
+    glVertex3f(50.5, -15.5, 85.1);
+    glVertex3f(50.5, 0.5, 85.1);
+    glVertex3f(62.0, 0.5, 85.1);
+    glVertex3f(66.0, -15.5, 85.1);
+    glEnd();
+    //jendela 1
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 0);
+    glVertex3f(50.5, -15.5, 65.1);
+    glVertex3f(50.5, 0.5, 65.1);
+    glVertex3f(62.0, 0.5, 65.1);
+    glVertex3f(66.0, -15.5, 65.1);
+    glEnd();
+
+    //jendela 1
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 0);
+    glVertex3f(32.0, -15.5, 85.1);
+    glVertex3f(34.0, 0.5, 85.1);
+    glVertex3f(48.5, 0.5, 85.1);
+    glVertex3f(48.5, -15.5, 85.1);
+    glEnd();
+    //jendela 1
+    glBegin(GL_QUADS);
+    glColor3f(0, 0, 0);
+    glVertex3f(32.0, -15.5, 65.1);
+    glVertex3f(34.0, 0.5, 65.1);
+    glVertex3f(48.5, 0.5, 65.1);
+    glVertex3f(48.5, -15.5, 65.1);
+    glEnd();
+
+    //ban depan1
+    glColor3f(1, 1, 0);
+    glBegin(GL_POLYGON);
+
+    radius = 400;
+    jumlah_titik = 60;
+    x_tengah = 3500;
+    y_tengah = -2500;
+
+    for (i = 0; i <= 360; i++)
+    {
+        float sudut = i * (2 * PI / jumlah_titik);
+        float x = x_tengah + radius * cos(sudut);
+        float y = y_tengah + radius * sin(sudut);
+        glVertex3f(x / 100, y / 100, 85.1);
+    }
+    glEnd();
+    glFlush();
+
+    //ban depan2
+    glColor3f(1, 1, 0);
+    glBegin(GL_POLYGON);
+
+    radius = 400;
+    jumlah_titik = 60;
+    x_tengah = 6700;
+    y_tengah = -2500;
+
+    for (i = 0; i <= 360; i++)
+    {
+        float sudut = i * (2 * PI / jumlah_titik);
+        float x = x_tengah + radius * cos(sudut);
+        float y = y_tengah + radius * sin(sudut);
+        glVertex3f(x / 100, y / 100, 85.1);
+    }
+    glEnd();
+    glFlush();
+
+    //ban belakang1
+    glColor3f(1, 1, 0);
+    glBegin(GL_POLYGON);
+
+    radius = 400;
+    jumlah_titik = 60;
+    x_tengah = 3500;
+    y_tengah = -2500;
+
+    for (i = 0; i <= 360; i++)
+    {
+        float sudut = i * (2 * PI / jumlah_titik);
+        float x = x_tengah + radius * cos(sudut);
+        float y = y_tengah + radius * sin(sudut);
+        glVertex3f(x / 100, y / 100, 64.9);
+    }
+    glEnd();
+    glFlush();
+
+    //ban belakang2
+    glColor3f(1, 1, 0);
+    glBegin(GL_POLYGON);
+
+    radius = 400;
+    jumlah_titik = 60;
+    x_tengah = 6700;
+    y_tengah = -2500;
+
+    for (i = 0; i <= 360; i++)
+    {
+        float sudut = i * (2 * PI / jumlah_titik);
+        float x = x_tengah + radius * cos(sudut);
+        float y = y_tengah + radius * sin(sudut);
+        glVertex3f(x / 100, y / 100, 64.9);
+    }
+    glEnd();
+    glFlush();
+    glPopMatrix();
+
+
+}
+
+void timer2(int t) {
+    angle -= 6.3;
+    glutPostRedisplay();
+
+    glutTimerFunc(1000, timer2, 0);
+}
+
+void timer(int t)
+{
+    if (atas) {
+        gerak += 1;
+    }
+    else {
+        gerak -= 1;
+    }
+    if (gerak > 100) {
+        atas = false;
+    }
+    else if (gerak < -200) {
+        atas = true;
+    }
+    glutPostRedisplay();
+
+    /*
+    kecepatan mobil berbanding terbalik
+    semakin besar nilai glutTimerFunc maka akan semakin pelan gerakannya
+    note: angka 50
+    */
+    glutTimerFunc(50, timer, 0);
+}
 void mouseMotion(int x, int y) {
     if (mousedown) {
         yrot = x - xdiff;
@@ -3272,6 +3521,29 @@ void keyboard(unsigned char key, int x, int y)
         }
     }
     tampil();
+}
+int main(int argc, char** argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(800, 600);
+    glutInitWindowPosition(40, 40);
+    glutCreateWindow("Zhejiang University");
+    init();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//    glDepthFunc(GL_LEQUAL);
+//    glShadeModel(GL_SMOOTH);
+//    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+	glutTimerFunc(1, timer, 0);
+    glutTimerFunc(1, timer2, 0);
+    glutDisplayFunc(tampil);
+    glutKeyboardFunc(keyboard);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
+    glutReshapeFunc(ukuran);
+    glutMainLoop();
+    return 0;
 }
 void ukuran(int width, int height)
 {
