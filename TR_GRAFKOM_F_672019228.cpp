@@ -3451,8 +3451,64 @@ void tampil(void)
 		glVertex3f(-125,12,-220);
 		glVertex3f(-125,12,-200);
 	glEnd();
-	
-	
+	//jalan setapak gedungdepan dan kanan
+	glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+		glVertex3f(160,-25,-280);
+		glVertex3f(160,-25,-100);
+		glVertex3f(180,-25,-100);
+		glVertex3f(180,-25,-280);
+	glEnd();
+	glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+		glVertex3f(90,-25,-120);
+		glVertex3f(90,-25,-100);
+		glVertex3f(180,-25,-100);
+		glVertex3f(180,-25,-120);
+	glEnd();
+	glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+		glVertex3f(90,-25,-260);
+		glVertex3f(90,-25,-280);
+		glVertex3f(180,-25,-280);
+		glVertex3f(180,-25,-260);
+	glEnd();
+	glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+		glVertex3f(90,-25,-280);
+		glVertex3f(90,-25,-100);
+		glVertex3f(100,-25,-100);
+		glVertex3f(100,-25,-280);
+	glEnd();
+	//jalan setapak tengah
+	glColor3f(0.1,0.1,0.1);
+	glBegin(GL_QUADS);
+		glVertex3f(-180,-25,-270);
+		glVertex3f(-180,-25,-295);
+		glVertex3f(75,-25,-295);
+		glVertex3f(75,-25,-270);
+	glEnd();
+	glColor3f(0.1,0.1,0.1);
+	glBegin(GL_QUADS);
+		glVertex3f(50,-25,-270);
+		glVertex3f(50,-25,-70);
+		glVertex3f(75,-25,-70);
+		glVertex3f(75,-25,-270);
+	glEnd();
+	glColor3f(0.1,0.1,0.1);
+	glBegin(GL_QUADS);
+		glVertex3f(-85,-25,-70);
+		glVertex3f(-85,-25,-155);
+		glVertex3f(75,-25,-155);
+		glVertex3f(75,-25,-70);
+	glEnd();
+	glColor3f(0.1,0.1,0.1);
+	glBegin(GL_QUADS);
+		glVertex3f(-60,-25,-270);
+		glVertex3f(-60,-25,-70);
+		glVertex3f(-85,-25,-70);
+		glVertex3f(-85,-25,-270);
+	glEnd();
     glPopMatrix();
     glutSwapBuffers();
 }
