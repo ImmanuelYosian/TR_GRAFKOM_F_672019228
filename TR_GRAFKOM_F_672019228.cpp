@@ -26,6 +26,7 @@ float angle = 0;
 int gerak = 0;
 bool atas = true;
 int is_depth;
+bool jalans = 1;
 
 void ab(float xkiri, float xkanan, float y, float zdepan, float zbelakang) {
     glBegin(GL_QUADS);
@@ -691,7 +692,7 @@ void mading(){
 
 void jalan() {
     glColor3f(0.1, 0.1, 0.1);
-    ab(-240.0, 280.0, -25.10, 100, 50);
+    ab(-230.0, 280.0, -25.10, 100, 50);
 
     //garis
     glColor3f(1.0, 1.0, 1.0);
@@ -3820,8 +3821,6 @@ void mobil() {
     glEnd();
     glFlush();
     glPopMatrix();
-
-
 }
 
 void timer2(int t) {
@@ -3832,19 +3831,24 @@ void timer2(int t) {
 }
 
 void timer(int t)
-{
-    if (atas) {
-        gerak += 1;
-    }
-    else {
-        gerak -= 1;
-    }
-    if (gerak > 150) {
-        atas = false;
-    }
-    else if (gerak < -240) {
-        atas = true;
-    }
+{	
+	if(jalans){
+		if (atas) {
+	        gerak += 1;
+	    }
+	    else {
+	        gerak -= 1;
+	    }
+	    if (gerak > 150) {
+	        atas = false;
+	    }
+	    else if (gerak < -240) {
+	        atas = true;
+	    }
+	} else {
+		gerak += 0;
+	}
+	    
     glutPostRedisplay();
 
     /*
@@ -3926,6 +3930,14 @@ void keyboard(unsigned char key, int x, int y)
     case 'n':
     case 'N':
         glRotatef(-3.0, 0.0, 0.0, 1.0);
+        break;
+    case 'p':
+    case 'P':
+        if(jalans){
+        	jalans = 0;
+		} else {
+			jalans = 1;
+		}
         break;
     case '5':
         if (is_depth)
