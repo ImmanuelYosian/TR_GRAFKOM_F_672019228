@@ -1,3 +1,13 @@
+/*
+Nama Kelompok 	: Cuan
+Topik 		: Zhejiang University
+672019014 	- Yulius
+672019228 	- Immanuel Yosian Leo Pratama ( Ketua ) 
+672019307 	- David Aryo Wicaksono
+672019321 	- Elsha Yuandini Dewasasmita
+*/
+
+
 #include <windows.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
