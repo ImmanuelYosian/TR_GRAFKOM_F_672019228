@@ -1836,10 +1836,10 @@ void tampil(void)
 	glEnd();
 	glColor3f(0.0,0.180,0.0);
 	glBegin(GL_QUADS);
-	glVertex3f(230,-25,-460);
+	glVertex3f(230,-25,-500);
 	glVertex3f(230,-25,-20);
 	glVertex3f(260,-25,-20);
-	glVertex3f(260,-25,-460);
+	glVertex3f(260,-25,-500);
 	glEnd();
 	glColor3f(0.0,0.180,0.0);
 	glBegin(GL_QUADS);
@@ -1848,7 +1848,28 @@ void tampil(void)
 	glVertex3f(280,-25.2,50);
 	glVertex3f(280,-25.2,-500);
 	glEnd();
-
+	//parkiran
+		glColor3f(0.0,0.180,0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-280,-25.2,200);
+	glVertex3f(-280,-25.2,100);
+	glVertex3f(280,-25.2,100);
+	glVertex3f(280,-25.2,200);
+	glEnd();
+		glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+	glVertex3f(-90,-25,200);
+	glVertex3f(-90,-25,120);
+	glVertex3f(90,-25,120);
+	glVertex3f(90,-25,200);
+	glEnd();
+			glColor3f(0.5,0.5,0.5);
+	glBegin(GL_QUADS);
+	glVertex3f(-60,-25,100);
+	glVertex3f(-60,-25,120);
+	glVertex3f(60,-25,120);
+	glVertex3f(60,-25,100);
+	glEnd();
 
 	
 	glBegin(GL_QUADS); // jendela kanan atas		
