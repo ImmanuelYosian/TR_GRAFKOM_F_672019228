@@ -692,10 +692,11 @@ void mading(){
 
 void jalan() {
     glColor3f(0.1, 0.1, 0.1);
-    ab(-230.0, 280.0, -25.10, 100, 50);
+    ab(-280.0, 280.0, -25.10, 100, 50);
 
     //garis
     glColor3f(1.0, 1.0, 1.0);
+    ab(-240.0, -210.0, -25.09, 76.0, 73.0);
     ab(-180.0, -150.0, -25.09, 76.0, 73.0);
     ab(-120.0, -90.0, -25.09, 76.0, 73.0);
     ab(-60.0, -30.0, -25.09, 76.0, 73.0);
@@ -1828,24 +1829,24 @@ void tampil(void)
 	//ALAS 
 	glColor3f(0.0,0.180,0.0);
 	glBegin(GL_QUADS);
-	glVertex3f(-230,-25.2,-460);
-	glVertex3f(-230,-25.2,50);
+	glVertex3f(-280,-25.2,-500);
+	glVertex3f(-280,-25.2,50);
 	glVertex3f(230,-25.2,50);
-	glVertex3f(230,-25.2,-460);
+	glVertex3f(230,-25.2,-500);
 	glEnd();
-		glColor3f(0.0,0.180,0.0);
+	glColor3f(0.0,0.180,0.0);
 	glBegin(GL_QUADS);
 	glVertex3f(230,-25,-460);
 	glVertex3f(230,-25,-20);
 	glVertex3f(260,-25,-20);
 	glVertex3f(260,-25,-460);
 	glEnd();
-		glColor3f(0.0,0.180,0.0);
+	glColor3f(0.0,0.180,0.0);
 	glBegin(GL_QUADS);
-	glVertex3f(260,-25.2,-460);
+	glVertex3f(260,-25.2,-500);
 	glVertex3f(260,-25.2,50);
 	glVertex3f(280,-25.2,50);
-	glVertex3f(280,-25.2,-460);
+	glVertex3f(280,-25.2,-500);
 	glEnd();
 
 
@@ -3595,10 +3596,9 @@ void mobil() {
     //perintah animasi
     glPushMatrix();
     glTranslatef(gerak, 5, 0);
-
     //tengah
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(23.5, -25.0, 85.0);
     glVertex3f(23.5, -15.5, 85.0);
     glVertex3f(70.0, -15.5, 85.0);
@@ -3606,7 +3606,7 @@ void mobil() {
     glEnd();
     //tengah atas
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(28.5, -15.5, 85.0);
     glVertex3f(31.5, 0.5, 85.0);
     glVertex3f(67.0, 0.5, 85.0);
@@ -3614,7 +3614,7 @@ void mobil() {
     glEnd();
     //depan
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(70.0, -25.0, 85.0);
     glVertex3f(70.0, -15.5, 85.0);
     glVertex3f(81.0, -15.5, 85.0);
@@ -3623,7 +3623,7 @@ void mobil() {
 
     //tengah
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(23.5, -25.0, 65.0);
     glVertex3f(23.5, -15.5, 65.0);
     glVertex3f(70.0, -15.5, 65.0);
@@ -3631,7 +3631,7 @@ void mobil() {
     glEnd();
     //tengah atas
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(28.5, -15.5, 65.0);
     glVertex3f(31.5, 0.5, 65.0);
     glVertex3f(67.0, 0.5, 65.0);
@@ -3639,7 +3639,7 @@ void mobil() {
     glEnd();
     //depan
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(70.0, -25.0, 65.0);
     glVertex3f(70.0, -15.5, 65.0);
     glVertex3f(81.0, -15.5, 65.0);
@@ -3648,7 +3648,7 @@ void mobil() {
 
     //atas
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(31, 0.5, 65.0);
     glVertex3f(67, 0.5, 65.0); //belakang
     glVertex3f(67, 0.5, 85.0); //depan kanan
@@ -3656,7 +3656,7 @@ void mobil() {
     glEnd();
     //depan
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);;
     glVertex3f(67.0, 0.0, 85.0);
     glVertex3f(70.0, -15.0, 85.0);
     glVertex3f(70.0, -15.0, 65.0);
@@ -3672,7 +3672,7 @@ void mobil() {
     glEnd();
     //belakang
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(31.0, 0.0, 85.0);
     glVertex3f(28.0, -15.0, 85.0);
     glVertex3f(28.0, -15.0, 65.0);
@@ -3680,7 +3680,7 @@ void mobil() {
     glEnd();
     //tutup cap depan
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(67, -15.5, 85.0);
     glVertex3f(80, -15.5, 85.0); //belakang
     glVertex3f(80, -15.5, 65.0); //depan kanan
@@ -3688,7 +3688,7 @@ void mobil() {
     glEnd();
     //tutup cap belakang
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(23, -15.5, 85.0);
     glVertex3f(28, -15.5, 85.0); //belakang
     glVertex3f(28, -15.5, 65.0); //depan kanan
@@ -3697,7 +3697,7 @@ void mobil() {
     //tempat lampu
     //depan
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+    glColor3f(1, 0.43, 0.78);
     glVertex3f(81.0, -15.0, 85.0);
     glVertex3f(81.0, -25.0, 85.0);
     glVertex3f(81.0, -25.0, 65.0);
@@ -3705,7 +3705,7 @@ void mobil() {
     glEnd();
     //belakang
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 1);
+	glColor3f(1, 0.43, 0.78);
     glVertex3f(23.0, -15.0, 85.0);
     glVertex3f(23.0, -25.0, 85.0);
     glVertex3f(23.0, -25.0, 65.0);
@@ -3842,7 +3842,7 @@ void timer(int t)
 	    if (gerak > 150) {
 	        atas = false;
 	    }
-	    else if (gerak < -240) {
+	    else if (gerak < -280) {
 	        atas = true;
 	    }
 	} else {
@@ -3850,12 +3850,6 @@ void timer(int t)
 	}
 	    
     glutPostRedisplay();
-
-    /*
-    kecepatan mobil berbanding terbalik
-    semakin besar nilai glutTimerFunc maka akan semakin pelan gerakannya
-    note: angka 50
-    */
     glutTimerFunc(50, timer, 0);
 }
 void mouseMotion(int x, int y) {
